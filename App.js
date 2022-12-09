@@ -9,11 +9,13 @@ export default function App() {
       <Text>Bienvenue</Text>
       <Greetings
         name={"Codiku"}
-        age={30}
+        age={101}
+        likeDog={true}
+        likeCat={true}
         superFonction={function () {
           console.log("Yo !");
         }}
-        isHappy
+        isHappy={true}
         dog={{ name: "Bobun", color: "blanc" }}
       >
         <Text>J'espère que ce cours va te plaire !</Text>
