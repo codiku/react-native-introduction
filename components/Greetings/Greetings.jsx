@@ -1,11 +1,11 @@
-import { Text } from 'react-native';
-import { View } from 'react-native';
-import { s } from "./Greetings.style"
+import { Text, View } from "react-native";
 
-export function Greetings({ name, age, superFonction, isHappy = true, dog, children, likeDog, likeCat }) {
-
-    return <View style={{ backgroundColor: "green", height: "100%" }}>
-        <Text style={{ color: 1 === 1 ? "white" : "black" }}>Bienvenu {name}</Text>
-        <View style={s.box} />
+export function Greetings({ name, age }) {
+  return (
+    <View>
+      <Text style={{ fontSize: 30 }}>
+        Bienvenue {name} tu as {age} ans
+      </Text>
     </View>
+  );
 }
