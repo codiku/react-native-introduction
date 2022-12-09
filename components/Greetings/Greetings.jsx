@@ -1,11 +1,16 @@
-import { Text, View } from "react-native";
+import { Text, TouchableOpacity, View } from "react-native";
 
-export function Greetings({ name, age }) {
+import { s } from "./Greetings.style";
+
+export function Greetings({ onClick }) {
+  function onClickMe() {
+    onClick("Merci pour le click !");
+  }
   return (
     <View>
-      <Text style={{ fontSize: 30 }}>
-        Bienvenue {name} tu as {age} ans
-      </Text>
+      <TouchableOpacity onPress={onClickMe} style={s.btn}>
+        <Text>Ici c'est {"<Greetings/>"}</Text>
+      </TouchableOpacity>
     </View>
   );
 }
