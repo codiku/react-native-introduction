@@ -1,17 +1,20 @@
-import { Text, TouchableOpacity } from "react-native";
-
-import { Greetings } from "./components/Greetings/Greetings";
-import { SafeAreaView } from "react-native-safe-area-context";
+import { useState } from "react";
+import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
+import { Child } from "./components/Child/Child";
 
 export default function App() {
-  function diplayGreetingClickMessage(message) {
-    alert(message);
+  const [age, setAge] = useState(0);
+
+  function hello(name) {
+    setAge(age + 1);
   }
 
+  console.log(age);
   return (
-    <SafeAreaView>
-      <Text>Ici c'est {"<App/>"}</Text>
-      <Greetings onClick={diplayGreetingClickMessage} />
-    </SafeAreaView>
+    <SafeAreaProvider>
+      <SafeAreaView style={{ flex: 1 }}>
+        <Child onPress={hello} />
+      </SafeAreaView>
+    </SafeAreaProvider>
   );
 }
