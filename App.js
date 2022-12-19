@@ -1,31 +1,14 @@
-import { StatusBar } from "expo-status-bar";
-import { View } from "react-native";
+import { Text, View } from "react-native";
+import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import { s } from "./App.style";
+import { FlexDemo } from "./components/FlexDemo/FlexDemo";
 
 export default function App() {
   return (
-    <View
-      style={{
-        ...s.container,
-      }}
-    >
-      <View style={s.boxYellow} />
-      <View style={s.boxRed} />
-      <View style={s.boxBlue} />
-      {/*
-      <View style={s.boxYellow} />
-      <View style={s.boxRed} />
-      <View style={s.boxBlue} />
-      <View style={s.boxYellow} />
-      <View style={s.boxRed} />
-      <View style={s.boxBlue} />
-      <View style={s.boxYellow} />
-      <View style={s.boxRed} />
-      <View style={s.boxBlue} />
-      <View style={s.boxYellow} />
-      <View style={s.boxRed} />
-      <View style={s.boxBlue} />
-    */}
-    </View>
+    <SafeAreaProvider>
+      <SafeAreaView style={{ backgroundColor: "grey", flex: 1 }}>
+        <FlexDemo />
+      </SafeAreaView>
+    </SafeAreaProvider>
   );
 }
