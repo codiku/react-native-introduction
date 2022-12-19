@@ -15,7 +15,7 @@ export function AgeCounter() {
       <TouchableOpacity onPress={increaseAge}>
         <Text style={{ fontSize: 40 }}>Augmenter</Text>
       </TouchableOpacity>
-      <Text style={{ fontSize: 40 }}>J'ai {age} ans</Text>
+      <AgeDisplay age={age} />
     </>
   );
 }
