@@ -1,23 +1,27 @@
-import { Image, Text } from "react-native";
-
-import { Greetings } from "./components/Greetings/Greetings";
-import { SafeAreaView } from "react-native-safe-area-context";
+import { Image, Text, View } from "react-native";
+import {
+  SafeAreaProvider,
+  SafeAreaView,
+} from "react-native-safe-area-context";
+import { Human } from "./components/Human/Human";
 
 export default function App() {
   return (
-    <SafeAreaView>
-      <Text>Bienvenue</Text>
-      <Greetings
-        name={"Codiku"}
-        age={30}
-        superFonction={function () {
-          console.log("Yo !");
-        }}
-        isHappy
-        dog={{ name: "Bobun", color: "blanc" }}
-      >
-        <Text>J'espère que ce cours va te plaire !</Text>
-      </Greetings>
-    </SafeAreaView>
+    <SafeAreaProvider>
+      <SafeAreaView style={{ flex: 1 }}>
+        <Human
+          firstName={"Peter"}
+          lastName={"Parker"}
+          age={60}
+          car={{ brand: "Renault", maxSpeed: 180 }}
+          isHappy={true}
+          doSomething={function () {
+            console.log("Hello !");
+          }}
+        >
+          <Text style={{ fontSize: 50 }}>COUCOU</Text>
+        </Human>
+      </SafeAreaView>
+    </SafeAreaProvider>
   );
 }
