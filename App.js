@@ -7,7 +7,16 @@ export default function App() {
   return (
     <SafeAreaProvider>
       <SafeAreaView>
-        <Human />
+        <Human
+          age={90}
+          car={{ brand: "Renault" }}
+          doSomething={function () {
+            console.log("Hello !");
+          }}
+          firstName={"Peter"}
+          lastName={"Parker"}
+          isHappy
+        />
       </SafeAreaView>
     </SafeAreaProvider>
   );
