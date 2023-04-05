@@ -2,6 +2,7 @@ import { StyleSheet } from "react-native";
 
 export const s = StyleSheet.create({
   container: {
+    borderRadius: 10,
     padding: 20,
     backgroundColor: "white",
     shadowColor: "#000",
@@ -30,5 +31,15 @@ export const s = StyleSheet.create({
   header: {
     flexDirection: "row",
   },
-  social: {},
+  social: {
+    padding: 10,
+    justifyContent: "space-evenly",
+    flexDirection: "row",
+  },
+
+  socialBtn: {
+    borderRadius: "50%",
+    padding: 10,
+    backgroundColor: "#eee",
+  },
 });
