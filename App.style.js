@@ -1,19 +1,11 @@
 import { StyleSheet } from "react-native";
 export const s = StyleSheet.create({
-  title: {
-    color: "red",
-    fontSize: 100,
-    marginTop: 50,
-    marginLeft: "50%",
-  },
-  square: {
+  box1: {
     height: 100,
-    backgroundColor: "green",
     width: 100,
+    backgroundColor: "red",
+    alignSelf: "flex-start",
   },
-  innerTxt: {
-    color: "white",
-    marginTop: 30,
-    marginLeft: 40,
-  },
+  box2: { height: 100, width: 100, backgroundColor: "orange" },
+  box3: { height: 100, width: 100, backgroundColor: "yellow" },
 });
