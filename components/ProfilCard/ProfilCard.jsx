@@ -2,7 +2,7 @@ import { Text, View, Image, TouchableOpacity } from "react-native";
 import { s } from "./ProfilCard.style";
 import { FontAwesome } from "@expo/vector-icons";
 
-export function ProfilCard({ firstName, lastName, age }) {
+export function ProfilCard({ firstName, lastName, age, isOpenToWork }) {
   return (
     <View style={s.container}>
       <View style={s.header}>
@@ -19,6 +19,15 @@ export function ProfilCard({ firstName, lastName, age }) {
           <Text>
             Hi I am React native developer, I am {age} years old, let's get in
             touch, and talk soon.
+          </Text>
+
+          <Text
+            style={{
+              backgroundColor: isOpenToWork ? "green" : "red",
+              color: "white",
+            }}
+          >
+            {isOpenToWork ? "I am open to work" : "Not looking for a job"}
           </Text>
         </View>
       </View>
