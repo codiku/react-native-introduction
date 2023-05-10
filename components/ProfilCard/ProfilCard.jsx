@@ -6,13 +6,8 @@ export function ProfilCard({
   firstName,
   lastName,
   age,
-  isOpenToWork,
-  onPressTitle,
-  onPressSocialIcon,
+  onPressSocialMediaIcon,
 }) {
-  function onPressTitle_() {
-    onPressTitle(firstName + " " + lastName);
-  }
   return (
     <View style={s.container}>
       <View style={s.header}>
@@ -23,11 +18,9 @@ export function ProfilCard({
           />
         </View>
         <View style={s.texts}>
-          <TouchableOpacity onPress={onPressTitle_}>
-            <Text style={s.name}>
-              {firstName} {lastName}
-            </Text>
-          </TouchableOpacity>
+          <Text style={s.name}>
+            {firstName} {lastName}
+          </Text>
           <Text>
             Hi I am React native developer, I am {age} years old, let's get in
             touch, and talk soon.
@@ -37,19 +30,19 @@ export function ProfilCard({
 
       <View style={s.social}>
         <TouchableOpacity
-          onPress={() => onPressSocialIcon("twitter")}
+          onPress={() => onPressSocialMediaIcon("twitter")}
           style={s.socialBtn}
         >
           <FontAwesome name="twitter" size={24} color="#1DA1F2" />
         </TouchableOpacity>
         <TouchableOpacity
-          onPress={() => onPressSocialIcon("linkdn")}
+          onPress={() => onPressSocialMediaIcon("linkdn")}
           style={s.socialBtn}
         >
           <FontAwesome name="linkedin-square" size={24} color="#0A66C2" />
         </TouchableOpacity>
         <TouchableOpacity
-          onPress={() => onPressSocialIcon("github")}
+          onPress={() => onPressSocialMediaIcon("github")}
           style={s.socialBtn}
         >
           <FontAwesome name="github" size={24} color="#333" />

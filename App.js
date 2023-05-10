@@ -1,25 +1,20 @@
 import { SafeAreaView, SafeAreaProvider } from "react-native-safe-area-context";
 import { s } from "./App.style";
 import { ProfilCard } from "./components/ProfilCard/ProfilCard";
-import { Alert, Linking, Text } from "react-native";
-import { useState } from "react";
+import { Linking } from "react-native";
 
 export default function App() {
-  function hello(name) {
-    Alert.alert("Hello " + name);
-    setCountClick(countClick + 1);
-  }
-  function goToSocial(socialMedia) {
+  function goToSocialMedia(socialMedia) {
     let url;
     switch (socialMedia) {
-      case "github":
-        url = "https://github.com/codiku";
-        break;
       case "twitter":
-        url = "https://github.com/codiku";
+        url = "http://github.com/codiku";
+        break;
+      case "github":
+        url = "http://github.com/codiku";
         break;
       case "linkdn":
-        url = "https://github.com/codiku";
+        url = "http://github.com/codiku";
         break;
     }
     Linking.openURL(url);
@@ -29,7 +24,7 @@ export default function App() {
     <SafeAreaProvider>
       <SafeAreaView style={s.container}>
         <ProfilCard
-          onPressSocialIcon={goToSocial}
+          onPressSocialMediaIcon={goToSocialMedia}
           firstName={"Codiku"}
           lastName={"TheDev"}
           age={30}
