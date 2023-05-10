@@ -8,6 +8,7 @@ export function ProfilCard({
   age,
   isOpenToWork,
   onPressTitle,
+  onPressSocialIcon,
 }) {
   function onPressTitle_() {
     onPressTitle(firstName + " " + lastName);
@@ -31,26 +32,26 @@ export function ProfilCard({
             Hi I am React native developer, I am {age} years old, let's get in
             touch, and talk soon.
           </Text>
-
-          <Text
-            style={{
-              backgroundColor: isOpenToWork ? "green" : "red",
-              color: "white",
-            }}
-          >
-            {isOpenToWork ? "I am open to work" : "Not looking for a job"}
-          </Text>
         </View>
       </View>
 
       <View style={s.social}>
-        <TouchableOpacity style={s.socialBtn}>
+        <TouchableOpacity
+          onPress={() => onPressSocialIcon("twitter")}
+          style={s.socialBtn}
+        >
           <FontAwesome name="twitter" size={24} color="#1DA1F2" />
         </TouchableOpacity>
-        <TouchableOpacity style={s.socialBtn}>
+        <TouchableOpacity
+          onPress={() => onPressSocialIcon("linkdn")}
+          style={s.socialBtn}
+        >
           <FontAwesome name="linkedin-square" size={24} color="#0A66C2" />
         </TouchableOpacity>
-        <TouchableOpacity style={s.socialBtn}>
+        <TouchableOpacity
+          onPress={() => onPressSocialIcon("github")}
+          style={s.socialBtn}
+        >
           <FontAwesome name="github" size={24} color="#333" />
         </TouchableOpacity>
       </View>
